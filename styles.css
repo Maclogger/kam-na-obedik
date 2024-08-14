@@ -13,18 +13,12 @@ header {
 }
 
 .logo {
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    width: 16rem;
+    width: 12rem;
     height: auto;
 }
 
 .smile {
-    position: absolute;
-    top: 1rem;
-    right: 4rem;
-    width: 9rem;
+    width: 6rem;
     height: auto;
 }
 
@@ -63,3 +57,21 @@ header {
     margin-bottom: 10px; /* Vzdialenosť medzi odkazom a obrázkom */
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+.menu-img {
+
+}
+
+
+
+
+
