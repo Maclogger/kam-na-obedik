@@ -6,10 +6,9 @@ body, html {
 }
 
 header {
-    position: relative;
-    background-color: #cfcfcf;
+    position: sticky;
+    background-color: #ededed;
     text-align: center;
-    padding: 3rem 0 3rem;
 }
 
 .logo {
@@ -22,54 +21,113 @@ header {
     height: auto;
 }
 
-.image-container {
-    display: flex;
-    justify-content: space-around;
-    height: 80vh;
-    padding: 10px;
-}
-
-.scroll-pane {
-    flex: 1;
-    margin: 0 5px;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.scroll-pane .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.scroll-pane img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 .link-moj {
     font-size: 1.4em;
-    margin-bottom: 10px; /* Vzdialenosť medzi odkazom a obrázkom */
+    margin-bottom: 10px;
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-.menu-img {
-
+.body-div {
+    background-color: #455363;
+    overflow: hidden;
+    display: flex;
+    margin: 0 0 0 0;
+    padding: 2rem 0 2rem 0;
+    height: 89vh;
 }
+
+.carousel-moj {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+
+    &.animation-reveal {
+        animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.karticka a, .mobile-card a {
+    color: white;
+}
+
+.karticka {
+    background-color: #e24743;
+    margin: 0 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 35, 0.25);
+    border-radius: 8px;
+    width: 30vw;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: width 0.16s ease-in-out, height 0.16s ease-in-out;
+}
+
+.karticka.is-custom-selected {
+}
+
+.karticka-bg {
+    width: 100%;
+}
+
+.flickity-enabled {
+    position: relative;
+}
+
+.flickity-enabled:focus {
+    outline: none;
+}
+
+.flickity-viewport {
+    position: relative;
+    height: 100%;
+}
+
+.flickity-slider {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-container-obal {
+    display: flex; /* Flexbox pre lepšie rozloženie */
+    justify-content: flex-start; /* Obsah bude zarovnaný na ľavej strane */
+}
+
+.scroll-container {
+    max-height: 83vh; /* Nastaví maximálnu výšku na 100% výšky obrazovky */
+    overflow-y: scroll; /* Pridá vertikálny posuvník */
+    padding-right: 0.75rem; /* Pridá medzeru na pravej strane, aby bol obsah dobre viditeľný */
+}
+
+
+
+
+.mobile-card {
+    background-color: #e24743;
+}
+
+
+
+
+
+
+
 
 
 
