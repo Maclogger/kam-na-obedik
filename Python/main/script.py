@@ -1,13 +1,14 @@
-import plznicka
-import blackdog
-import radnicna
+from ..restauracie.plznicka import plznicka
+from ..restauracie.blackdog import blackdog
+from ..restauracie.radnicna import radnicna
+from ..restauracie.makalu import makalu
 
 def spusti(func, nazov_restauracie, stats):
     stats[1] += 1
-    print(f"{nazov_restauracie} loading...")
+    print(f"\n{nazov_restauracie} loading...")
     try:
         func(False)
-        print(f"{nazov_restauracie} DONE. :D")
+        print(f"{nazov_restauracie} DONE.")
         stats[0] += 1
     except:
         print(f"Aktualizácia reštaurácie '{nazov_restauracie}' zlyhala. :(")
@@ -18,12 +19,13 @@ def main():
     spusti(plznicka.main, "Plznička", stats)
     spusti(blackdog.main, "Blackdog", stats)
     spusti(radnicna.main, "Radničná", stats)
+    spusti(makalu.main, "Makalu", stats)
     uspesnost = stats[0] / stats[1] * 100
-    print(f"Úspešnosť: {uspesnost}% - {stats[0]}/{stats[1]}")
+    print(f"\n\nÚspešnosť: {uspesnost}% - {stats[0]}/{stats[1]}\n")
 
 if __name__ == "__main__":
    main()
-    
+   
     
 
 

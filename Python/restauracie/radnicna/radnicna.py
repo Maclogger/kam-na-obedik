@@ -1,10 +1,10 @@
 from datetime import datetime
 import re
-from requester import *
-from pdf_parser import *
+from ...main.tools.requester import *
+from ...main.tools.pdf_parser import *
 
 url = "https://radnicna.sk/denne-menu/"
-save_dir = "radnicna"
+save_dir = "Python/restauracie/radnicna/output"
 print_enabled = True
 
 def get_hladany_url_na_pdf(req):
@@ -50,7 +50,7 @@ def skus_ziskat_pdf():
     return save_path
     
     
-def main(v_print_enabled):
+def main(v_print_enabled=True):
     global print_enabled
     print_enabled = v_print_enabled
     pdf_path = skus_ziskat_pdf()
