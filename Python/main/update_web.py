@@ -40,6 +40,9 @@ def najdi_najnovsi_a_prekopiruj(nazov_rest, pripona):
     # Cieľová cesta pre súbor
     destination = os.path.join(output_dir, output_filename)
 
+    # Overenie, či cieľový adresár existuje, ak nie, tak ho vytvoríme
+    os.makedirs(output_dir, exist_ok=True)
+
     # Skopírovanie súboru do nového umiestnenia
     shutil.copy2(latest_file, destination)
     print(f"Súbor {latest_file} bol skopírovaný do {destination}.")

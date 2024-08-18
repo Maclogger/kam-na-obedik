@@ -17,13 +17,12 @@ jobs:
         python-version: '3.12'  # Nastavenie Pythonu 3.12
 
     - name: Install Poppler
-      run: sudo apt-get install -y poppler-utils
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y poppler-utils
 
     - name: Install wkhtmltopdf
-      run: |
-        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-        sudo apt-get update
-        sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+      run: sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 
     - name: Install Python dependencies
       run: |
