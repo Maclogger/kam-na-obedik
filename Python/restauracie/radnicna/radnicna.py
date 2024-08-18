@@ -49,7 +49,6 @@ def skus_ziskat_pdf():
     
     return save_path
     
-    
 def main(v_print_enabled=True):
     global print_enabled
     print_enabled = v_print_enabled
