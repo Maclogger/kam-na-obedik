@@ -45,7 +45,7 @@ def main(v_print_enabled=True):
     
     pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
     
-    from_html_file_to_png(html_path, pic_path, width=900)
+    from_html_file_to_png(html_path, pic_path, width=1000)
 
     combine_images(pic_path, f"{core}/assets/logo_makalu.png", pic_path, scale_factor=2.5)
 
