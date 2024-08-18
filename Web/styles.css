@@ -5,6 +5,12 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+*::selection {
+    background-color: #455363;
+    color: white;
+}
+
+
 header {
     position: sticky;
     background-color: #ededed;
@@ -22,9 +28,13 @@ header {
 }
 
 .link-moj {
-    font-size: 1.4em;
     margin-bottom: 10px;
     text-align: center;
+    font-size: 0.8em;
+}
+
+.link-moj:hover {
+    color: #455363;
 }
 
 .body-div {
@@ -73,7 +83,6 @@ header {
     width: 30vw;
     display: block;
     position: relative;
-    cursor: pointer;
     transition: width 0.16s ease-in-out, height 0.16s ease-in-out;
 }
 
@@ -116,20 +125,18 @@ header {
 }
 
 
-
-
 .mobile-card {
     background-color: #e24743;
 }
 
 
+.sticky-hlavicka {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #e24743;
+}
 
-
-
-
-
-
-
-
-
-
+.text-maly {
+    font-size: 0.9em;
+}

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-python-script:
+  run-python-scripts:
     runs-on: ubuntu-22.04  # Použitie Ubuntu 22.04.4 LTS
 
     steps:
@@ -28,10 +28,27 @@ jobs:
     - name: Install Python dependencies
       run: |
         python3.12 -m pip install --upgrade pip
-        pip install -r requirements.txt  # Ak nemáte requirements.txt, môžete túto líniu preskočiť
+        pip install -r requirements.txt
 
-    - name: Run Python script
-      run: python3.12 -m Python.main.script  # Spustenie skriptu z koreňového adresára
+    - name: Plznička
+      run: python3.12 -m Python.restauracie.plznicka.plznicka
+      continue-on-error: true  # Pokračovať aj v prípade chyby
+
+    - name: Blackdog
+      run: python3.12 -m Python.restauracie.blackdog.blackdog
+      continue-on-error: true  # Pokračovať aj v prípade chyby
+
+    - name: Radničná
+      run: python3.12 -m Python.restauracie.radnicna.radnicna
+      continue-on-error: true  # Pokračovať aj v prípade chyby
+
+    - name: Makalu
+      run: python3.12 -m Python.restauracie.makalu.makalu
+      continue-on-error: true  # Pokračovať aj v prípade chyby
+
+    - name: UpdateWEB
+      run: python3.12 -m Python.main.update_web
+      continue-on-error: true  # Pokračovať aj v prípade chyby
 
     - name: Configure Git
       run: |
