@@ -1,6 +1,5 @@
 name: Manual Python Script Run
 
-# Manuálne spustenie akcie
 on:
   workflow_dispatch:
 
@@ -16,6 +15,9 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.12'  # Nastavenie Pythonu 3.12
+
+    - name: Install Poppler
+      run: sudo apt-get install -y poppler-utils
 
     - name: Install wkhtmltopdf
       run: |
@@ -39,7 +41,7 @@ jobs:
     - name: Commit and push changes
       run: |
         git add .
-        git commit -m "Auto-generated files by GitHub Action"
+        git commit -m "Aktualizácia súborov."
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
