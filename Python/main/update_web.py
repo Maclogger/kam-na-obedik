@@ -5,7 +5,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 def update_html_file(nazov_rest, timestamp):
-    html_file_path = "Web/index.html"
+    html_file_path = "index.html"
     
     # Načítanie a parsovanie HTML súboru
     with open(html_file_path, "r", encoding="utf-8") as file:
