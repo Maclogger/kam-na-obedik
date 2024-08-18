@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+imgkit
+pdf2image
+pdfplumber
+pdfkit

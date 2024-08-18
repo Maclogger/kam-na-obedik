@@ -1,0 +1,45 @@
+name: Manual Python Script Run
+
+# Manuálne spustenie akcie
+on:
+  workflow_dispatch:
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-22.04  # Použitie Ubuntu 22.04.4 LTS
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'  # Nastavenie Pythonu 3.12
+
+    - name: Install wkhtmltopdf
+      run: |
+        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+        sudo apt-get update
+        sudo apt-get install -y ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+
+    - name: Install Python dependencies
+      run: |
+        python3.12 -m pip install --upgrade pip
+        pip install -r requirements.txt  # Ak nemáte requirements.txt, môžete túto líniu preskočiť
+
+    - name: Run Python script
+      run: python3.12 -m Python.main.script  # Spustenie skriptu z koreňového adresára
+
+    - name: Configure Git
+      run: |
+        git config --global user.name 'Maclogger's BOT'
+        git config --global user.email '31780197+Maclogger@users.noreply.github.com'
+
+    - name: Commit and push changes
+      run: |
+        git add .
+        git commit -m "Auto-generated files by GitHub Action"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
