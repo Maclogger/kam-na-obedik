@@ -33,7 +33,7 @@ jobs:
 
     - name: Configure Git
       run: |
-        git config --global user.name 'Maclogger's BOT'
+        git config --global user.name 'Macloggerov BOT'
         git config --global user.email '31780197+Maclogger@users.noreply.github.com'
 
     - name: Commit and push changes
