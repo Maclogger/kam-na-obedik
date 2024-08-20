@@ -126,6 +126,10 @@ jobs:
       run: python3.12 -m Python.restauracie.makalu.makalu
       continue-on-error: true  # Pokračovať aj v prípade chyby
 
+    - name: Kozlovňa
+      run: python3.12 -m Python.restauracie.kozlovna.kozlovna
+      continue-on-error: true  # Pokračovať aj v prípade chyby
+
     - name: UpdateWEB
       run: python3.12 -m Python.main.update_web
       continue-on-error: true  # Pokračovať aj v prípade chyby

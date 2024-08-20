@@ -31,7 +31,7 @@ def main(v_print_enabled=True):
     
     pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
     
-    from_html_file_to_png(html_path, pic_path, width=620)
+    from_html_file_to_png(html_path, pic_path, width=580)
     
 
 if __name__ == "__main__":
