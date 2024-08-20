@@ -17,7 +17,7 @@ def main(v_print_enabled=True):
     
     pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
 
-        
+
     req = SimpleRequest(base_url=url)
     html_content = req.get("/")
     soup = req.parse_html(html_content)

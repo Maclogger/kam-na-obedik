@@ -65,6 +65,8 @@ def main():
     najdi_najnovsi_a_prekopiruj("radnicna", "pdf")
     
     najdi_najnovsi_a_prekopiruj("makalu", "png")
+    
+    najdi_najnovsi_a_prekopiruj("kozlovna", "png")
 
 if __name__ == "__main__":
     main()
