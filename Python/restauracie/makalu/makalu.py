@@ -3,27 +3,12 @@ import re
 from ...main.tools.requester import *
 from ...main.tools.pdf_parser import *
 from ...main.tools.html_to_png import *
+from ...main.tools.template_parser import *
 
 url = "https://restauracie-makalu.sk/weekly"
 core = "Python/restauracie/makalu"
 save_dir = f"{core}/output"
 print_enabled = True
-
-def insert_div_into_template(template_path, output_path, div_content):
-    # Načítanie templatu
-    with open(template_path, 'r', encoding='utf-8') as file:
-        template_html = file.read()
-
-    # Nahradenie markeru "__INSERT_HERE__" obsahom divu
-    new_html = re.sub(r'<div id="__INSERT_HERE__"></div>', div_content, template_html)
-
-    # Uloženie výsledného HTML do nového súboru
-    with open(output_path, 'w', encoding='utf-8') as new_file:
-        new_file.write(new_html)
-
-    if print_enabled:
-        print(f"Nový súbor bol úspešne vytvorený: {output_path}")
-
 
 def main(v_print_enabled=True):
     global print_enabled
