@@ -12,7 +12,7 @@ def get_hladany_url_na_pdf(req):
     
     if html_content:
         # Regulárny výraz na vyhľadanie všetkých href odkazov končiacich na .pdf
-        pdf_links = re.findall(r'href="(.*?\.pdf)"', html_content)
+        pdf_links = re.findall(r'href="(.*?\.pdf)\s*"', html_content)
         
         hladany_link = ""
         for link in pdf_links:
