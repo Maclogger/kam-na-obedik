@@ -12,7 +12,7 @@ def get_hladany_url_na_pdf(req):
     
     if html_content:
         # Regulárny výraz na vyhľadanie všetkých href odkazov končiacich na .pdf
-        pdf_links = re.findall(r'<a.*href="(.*?\.pdf)".*>(.*)<\/a>', html_content)
+        pdf_links = re.findall(r'<a.*href="(.*?\.pdf)\s*".*>(.*)<\/a>', html_content)
         
         hladany_link = ""
         hladany_nazov = ""
@@ -20,7 +20,7 @@ def get_hladany_url_na_pdf(req):
             if (print_enabled):
                 print(f"Nájdený link na menu pod názvom: {nazov} '{link}'")
             lower = nazov.lower()
-            if "denn" in lower and "menu" in lower:
+            if "denn" in lower and "menu" in lower and "vikend" not in link and "víkend" not in link and "napoj" not in link and "nápoj":
                 hladany_nazov = nazov
                 hladany_link = link
             

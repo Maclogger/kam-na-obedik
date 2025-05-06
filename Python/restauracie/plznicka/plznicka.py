@@ -18,7 +18,7 @@ def get_hladany_url_na_pdf(req):
         for link in pdf_links:
             if (print_enabled):
                 print(f"Nájdený link na menu: {link}")
-            if "jedalny" not in link:
+            if "jedalny" not in link and "vikend" not in link and "víkend" not in link and "napoj" not in link and "nápoj":
                 hladany_link = link
             
         if (print_enabled):
