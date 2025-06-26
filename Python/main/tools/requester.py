@@ -11,9 +11,10 @@ class SimpleRequest:
         if self.base_url:
             return f"{self.base_url.rstrip('/')}/{endpoint.lstrip('/')}"
         return endpoint
-    
-    def get(self, endpoint, params=None):
-        url = self._full_url(endpoint)
+
+
+    def get(self, endpoint=None, params=None):
+        url = self.base_url if endpoint in [None, ""] else self._full_url(endpoint)
         try:
             response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
@@ -21,6 +22,7 @@ class SimpleRequest:
         except requests.RequestException as e:
             print(f"Request failed: {e}")
             return None
+
 
     def post(self, endpoint, data=None, json=None):
         url = self._full_url(endpoint)

@@ -15,9 +15,9 @@ def main(v_print_enabled=True):
     print_enabled = v_print_enabled
     
     req = SimpleRequest(base_url=url)
-    html_content = req.get("/")
+    html_content = req.get("")
     soup = req.parse_html(html_content)
-    
+
     # Nájdeme prvý <div> s triedou "MenuHead"
     menu_head_div = soup.find('div', class_='MenuHead')
     
@@ -27,8 +27,9 @@ def main(v_print_enabled=True):
     
     html_path = f"{core}/assets/temp.html"
     insert_div_into_template(f"{core}/assets/template.html", html_path, str(div))
-    
-    pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
+
+    time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    pic_path = f"{save_dir}/{time}.png"
     
     from_html_file_to_png(html_path, pic_path, width=1000)
 

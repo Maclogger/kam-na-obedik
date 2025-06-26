@@ -15,7 +15,7 @@ def main(v_print_enabled=True):
     global print_enabled
     print_enabled = v_print_enabled
     
-    pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
+    #pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
 
 
     req = SimpleRequest(base_url=url)
@@ -28,8 +28,9 @@ def main(v_print_enabled=True):
     
     html_path = f"{core}/assets/temp.html"
     insert_div_into_template(f"{core}/assets/template.html", html_path, str(hladany_div))
-    
-    pic_path = f"{save_dir}/{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.png"
+
+    time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    pic_path = f"{save_dir}/{time}.png"
     
     from_html_file_to_png(html_path, pic_path, width=580)
     
