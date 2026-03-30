@@ -1,16 +1,16 @@
 name: Manual Python Script Run
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 4 * * 0-5'    # NED-PIA 4:00
-    - cron: '0 6 * * 0-5'    # NED-PIA 6:00
-    - cron: '0 9 * * 0-5'    # NED-PIA 9:00
-    - cron: '0 10 * * 0-5'   # NED-PIA 10:00
-    - cron: '0 11 * * 0-5'   # NED-PIA 11:00
-    - cron: '0 18 * * 0-5'   # NED-PIA 18:00
-    - cron: '0 22 * * 0-5'   # NED-PIA 22:00
-    - cron: '0 12 * * 6'     # SOB 12:00
+#on:
+#  workflow_dispatch:
+#  schedule:
+#    - cron: '0 4 * * 0-5'    # NED-PIA 4:00
+#    - cron: '0 6 * * 0-5'    # NED-PIA 6:00
+#    - cron: '0 9 * * 0-5'    # NED-PIA 9:00
+#   - cron: '0 10 * * 0-5'   # NED-PIA 10:00
+#    - cron: '0 11 * * 0-5'   # NED-PIA 11:00
+#    - cron: '0 18 * * 0-5'   # NED-PIA 18:00
+#   - cron: '0 22 * * 0-5'   # NED-PIA 22:00
+#   - cron: '0 12 * * 6'     # SOB 12:00
 jobs:
   run-python-scripts:
     runs-on: ubuntu-22.04  # Použitie Ubuntu 22.04.4 LTS
